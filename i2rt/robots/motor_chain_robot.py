@@ -479,8 +479,8 @@ if __name__ == "__main__":
         raise ValueError(f"Unknown model: {args.model}")
 
     if args.operation_mode == "gravity_comp":
+        robot.zero_torque_mode()
         while True:
-            robot.zero_torque_mode()
             print(robot.get_observations())
             time.sleep(1)
     elif args.operation_mode == "test_gripper":
